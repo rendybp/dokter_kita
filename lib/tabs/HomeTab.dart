@@ -7,25 +7,29 @@ List<Map> doctors = [
     'img': 'assets/doctor02.png',
     'doctorName': 'Dr. Wahyu Hidayat',
     'doctorTitle': 'Spesialis Penyakit Dalam',
-    'rating' : '5.0 - 300 Reviews'
+    'rating' : '5.0 - 300 Reviews',
+    'kode' : '/1'
   },
   {
     'img': 'assets/doctor04.jpeg',
     'doctorName': 'Dr. Yolanda Tamara',
     'doctorTitle': 'Spesialis Anak',
-    'rating' : '5.0 - 250 Reviews'
+    'rating' : '5.0 - 250 Reviews',
+    'kode' : '/2'
   },
   {
     'img': 'assets/doctor08.png',
     'doctorName': 'Dr. Heri Purnomo',
     'doctorTitle': 'Dokter Umum',
-    'rating' : '4.9 - 200 Reviews'
+    'rating' : '4.9 - 200 Reviews',
+    'kode' : '/3'
   },
   {
     'img': 'assets/doctor05.jpeg',
     'doctorName': 'Dr. Isti Widodo',
     'doctorTitle': 'Spesialis Kulit',
-    'rating' : '4.8 - 200 Reviews'
+    'rating' : '4.8 - 200 Reviews',
+    'kode' : '/4'
   }
 ];
 
@@ -103,7 +107,8 @@ class HomeTab extends StatelessWidget {
                 img: doctor['img'],
                 doctorName: doctor['doctorName'],
                 doctorTitle: doctor['doctorTitle'],
-                rating: doctor['rating']
+                rating: doctor['rating'],
+                kode: doctor['kode']
               )
           ],
         ),
@@ -117,12 +122,14 @@ class TopDoctorCard extends StatelessWidget {
   String doctorName;
   String doctorTitle;
   String rating;
+  String kode;
 
   TopDoctorCard({
     required this.img,
     required this.doctorName,
     required this.doctorTitle,
-    required this.rating
+    required this.rating,
+    required this.kode
   });
 
   @override
@@ -131,7 +138,7 @@ class TopDoctorCard extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/detail');
+          Navigator.pushNamed(context, kode);
         },
         child: Row(
           children: [

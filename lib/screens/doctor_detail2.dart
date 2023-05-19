@@ -4,8 +4,8 @@ import 'package:dokter_kita/styles/colors.dart';
 import 'package:dokter_kita/styles/styles.dart';
 import "package:latlong2/latlong.dart" as latLng;
 
-class SliverDoctorDetail extends StatelessWidget {
-  const SliverDoctorDetail({Key? key}) : super(key: key);
+class SliverDoctorDetail2 extends StatelessWidget {
+  const SliverDoctorDetail2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class SliverDoctorDetail extends StatelessWidget {
         slivers: [
           SliverAppBar(
             pinned: true,
-            title: Text('Detail Dokter'),
+            title: Text('Detail Doctor'),
             backgroundColor: Color(MyColors.primary),
             expandedHeight: 200,
             flexibleSpace: FlexibleSpaceBar(
@@ -55,14 +55,14 @@ class DetailBody extends StatelessWidget {
             height: 30,
           ),
           Text(
-            'Tentang Dokter',
+            'About Doctor',
             style: kTitleStyle,
           ),
           SizedBox(
             height: 15,
           ),
           Text(
-            'Dr. Wahyu Hidayat merupakan dokter spesialis yang sangat berkompeten dan memiliki keahlian yang tinggi dalam menangani penyakit terkait sistem organ',
+            'Dr. Joshua Simorangkir is a specialist in internal medicine who specialzed blah blah.',
             style: TextStyle(
               color: Color(MyColors.purple01),
               fontWeight: FontWeight.w500,
@@ -89,7 +89,7 @@ class DetailBody extends StatelessWidget {
                 Color(MyColors.primary),
               ),
             ),
-            child: Text('Atur Jadwal Periksa'),
+            child: Text('Book Appointment'),
             onPressed: () => {},
           )
         ],
@@ -112,7 +112,7 @@ class DoctorLocation extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: FlutterMap(
           options: MapOptions(
-            center: latLng.LatLng(-7.5943469, 110.7413429),
+            center: latLng.LatLng(51.5, -0.09),
             zoom: 13.0,
           ),
           layers: [
@@ -138,7 +138,7 @@ class DoctorInfo extends StatelessWidget {
       children: const [
         NumberCard(
           label: 'Patients',
-          value: '300+',
+          value: '100+',
         ),
         SizedBox(width: 15),
         NumberCard(
@@ -148,7 +148,7 @@ class DoctorInfo extends StatelessWidget {
         SizedBox(width: 15),
         NumberCard(
           label: 'Rating',
-          value: '5.0',
+          value: '4.0',
         ),
       ],
     );
@@ -241,7 +241,7 @@ class DetailDoctorCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Dr. Wahyu Hidayat',
+                      'Dr. Yolanda Tamara',
                       style: TextStyle(
                           color: Color(MyColors.header01),
                           fontWeight: FontWeight.w700),
@@ -250,7 +250,7 @@ class DetailDoctorCard extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      'Spesialis Penyakit Dalam',
+                      'Heart Specialist',
                       style: TextStyle(
                         color: Color(MyColors.grey02),
                         fontWeight: FontWeight.w500,
@@ -260,7 +260,7 @@ class DetailDoctorCard extends StatelessWidget {
                 ),
               ),
               Image(
-                image: AssetImage('assets/doctor02.png'),
+                image: AssetImage('assets/doctor01.jpeg'),
                 width: 100,
               )
             ],
