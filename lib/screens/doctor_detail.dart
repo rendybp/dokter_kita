@@ -73,7 +73,7 @@ class DetailBody extends StatelessWidget {
             height: 25,
           ),
           Text(
-            'Lokasi',
+            'Location',
             style: kTitleStyle,
           ),
           SizedBox(
@@ -137,13 +137,13 @@ class DoctorInfo extends StatelessWidget {
     return Row(
       children: const [
         NumberCard(
-          label: 'Pasien',
+          label: 'Patients',
           value: '300+',
         ),
         SizedBox(width: 15),
         NumberCard(
-          label: 'Melayani',
-          value: '10 tahun',
+          label: 'Experiences',
+          value: '10 years',
         ),
         SizedBox(width: 15),
         NumberCard(

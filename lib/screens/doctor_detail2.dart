@@ -14,7 +14,7 @@ class SliverDoctorDetail2 extends StatelessWidget {
         slivers: [
           SliverAppBar(
             pinned: true,
-            title: Text('Detail Dokter'),
+            title: Text('Detail Doctor'),
             backgroundColor: Color(MyColors.primary),
             expandedHeight: 200,
             flexibleSpace: FlexibleSpaceBar(
@@ -55,14 +55,14 @@ class DetailBody extends StatelessWidget {
             height: 30,
           ),
           Text(
-            'Tentang Dokter',
+            'About Doctor',
             style: kTitleStyle,
           ),
           SizedBox(
             height: 15,
           ),
           Text(
-            'Dr. Yolanda Tamara merupakan dokter spesialis penyakit anak, beliau sangat ramah kepada anak-anak sehingga tidak membuat mereka takut saat diperiksa',
+            'Dr. Joshua Simorangkir is a specialist in internal medicine who specialzed blah blah.',
             style: TextStyle(
               color: Color(MyColors.purple01),
               fontWeight: FontWeight.w500,
@@ -73,7 +73,7 @@ class DetailBody extends StatelessWidget {
             height: 25,
           ),
           Text(
-            'Lokasi',
+            'Location',
             style: kTitleStyle,
           ),
           SizedBox(
@@ -89,7 +89,7 @@ class DetailBody extends StatelessWidget {
                 Color(MyColors.primary),
               ),
             ),
-            child: Text('Atur Jadwal Periksa'),
+            child: Text('Book Appointment'),
             onPressed: () => {},
           )
         ],
@@ -112,7 +112,7 @@ class DoctorLocation extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: FlutterMap(
           options: MapOptions(
-            center: latLng.LatLng(-7.5943469, 110.7413429),
+            center: latLng.LatLng(51.5, -0.09),
             zoom: 13.0,
           ),
           layers: [
@@ -137,18 +137,18 @@ class DoctorInfo extends StatelessWidget {
     return Row(
       children: const [
         NumberCard(
-          label: 'Pasien',
-          value: '250+',
+          label: 'Patients',
+          value: '100+',
         ),
         SizedBox(width: 15),
         NumberCard(
-          label: 'Melayani',
-          value: '5 tahun',
+          label: 'Experiences',
+          value: '10 years',
         ),
         SizedBox(width: 15),
         NumberCard(
           label: 'Rating',
-          value: '5.0',
+          value: '4.0',
         ),
       ],
     );
@@ -250,7 +250,7 @@ class DetailDoctorCard extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      'Spesialis Anak',
+                      'Heart Specialist',
                       style: TextStyle(
                         color: Color(MyColors.grey02),
                         fontWeight: FontWeight.w500,
@@ -260,7 +260,7 @@ class DetailDoctorCard extends StatelessWidget {
                 ),
               ),
               Image(
-                image: AssetImage('assets/doctor04.jpeg'),
+                image: AssetImage('assets/doctor01.jpeg'),
                 width: 100,
               )
             ],
