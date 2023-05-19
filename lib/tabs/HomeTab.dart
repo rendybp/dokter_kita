@@ -5,23 +5,27 @@ import 'package:dokter_kita/styles/styles.dart';
 List<Map> doctors = [
   {
     'img': 'assets/doctor02.png',
-    'doctorName': 'Dr. Gardner Pearson',
-    'doctorTitle': 'Heart Specialist'
+    'doctorName': 'Dr. Wahyu Hidayat',
+    'doctorTitle': 'Spesialis Penyakit Dalam',
+    'rating' : '5.0 - 300 Reviews'
   },
   {
-    'img': 'assets/doctor03.jpeg',
-    'doctorName': 'Dr. Rosa Williamson',
-    'doctorTitle': 'Skin Specialist'
+    'img': 'assets/doctor04.jpeg',
+    'doctorName': 'Dr. Yolanda Tamara',
+    'doctorTitle': 'Spesialis Anak',
+    'rating' : '5.0 - 250 Reviews'
   },
   {
-    'img': 'assets/doctor02.png',
-    'doctorName': 'Dr. Gardner Pearson',
-    'doctorTitle': 'Heart Specialist'
+    'img': 'assets/doctor08.png',
+    'doctorName': 'Dr. Heri Purnomo',
+    'doctorTitle': 'Dokter Umum',
+    'rating' : '4.9 - 200 Reviews'
   },
   {
-    'img': 'assets/doctor03.jpeg',
-    'doctorName': 'Dr. Rosa Williamson',
-    'doctorTitle': 'Skin Specialist'
+    'img': 'assets/doctor05.jpeg',
+    'doctorName': 'Dr. Isti Widodo',
+    'doctorTitle': 'Spesialis Kulit',
+    'rating' : '4.8 - 200 Reviews'
   }
 ];
 
@@ -85,7 +89,7 @@ class HomeTab extends StatelessWidget {
               height: 20,
             ),
             Text(
-              'Top Doctor',
+              'Dokter Terbaik',
               style: TextStyle(
                 color: Color(MyColors.header01),
                 fontWeight: FontWeight.bold,
@@ -99,6 +103,7 @@ class HomeTab extends StatelessWidget {
                 img: doctor['img'],
                 doctorName: doctor['doctorName'],
                 doctorTitle: doctor['doctorTitle'],
+                rating: doctor['rating']
               )
           ],
         ),
@@ -111,11 +116,13 @@ class TopDoctorCard extends StatelessWidget {
   String img;
   String doctorName;
   String doctorTitle;
+  String rating;
 
   TopDoctorCard({
     required this.img,
     required this.doctorName,
     required this.doctorTitle,
+    required this.rating
   });
 
   @override
@@ -174,7 +181,7 @@ class TopDoctorCard extends StatelessWidget {
                       width: 5,
                     ),
                     Text(
-                      '4.0 - 50 Reviews',
+                      rating,
                       style: TextStyle(color: Color(MyColors.grey02)),
                     )
                   ],
@@ -217,7 +224,7 @@ class AppointmentCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          backgroundImage: AssetImage('assets/doctor01.jpeg'),
+                          backgroundImage: AssetImage('assets/doctor03.jpeg'),
                         ),
                         SizedBox(
                           width: 10,
@@ -226,13 +233,13 @@ class AppointmentCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Dr.Muhammed Syahid',
+                            Text('Dr.Yosef David',
                                 style: TextStyle(color: Colors.white)),
                             SizedBox(
                               height: 2,
                             ),
                             Text(
-                              'Dental Specialist',
+                              'Spesialis Gigi dan Mulut',
                               style: TextStyle(color: Color(MyColors.text01)),
                             ),
                           ],
@@ -331,7 +338,7 @@ class ScheduleCard extends StatelessWidget {
             width: 5,
           ),
           Text(
-            'Mon, July 29',
+            'Senin, 22 Mei',
             style: TextStyle(color: Colors.white),
           ),
           SizedBox(
