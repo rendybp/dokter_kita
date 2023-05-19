@@ -4,8 +4,8 @@ import 'package:dokter_kita/styles/colors.dart';
 import 'package:dokter_kita/styles/styles.dart';
 import "package:latlong2/latlong.dart" as latLng;
 
-class SliverDoctorDetail extends StatelessWidget {
-  const SliverDoctorDetail({Key? key}) : super(key: key);
+class SliverDoctorDetail4 extends StatelessWidget {
+  const SliverDoctorDetail4({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class DetailBody extends StatelessWidget {
             height: 15,
           ),
           Text(
-            'Dr. Wahyu Hidayat merupakan dokter spesialis yang sangat berkompeten dan memiliki keahlian yang tinggi dalam menangani penyakit terkait sistem organ',
+            'Dr. Isti Widodo merupakan dokter spesialis kulit yang sangat ahli dalam bidang dermatologi dan kecantikan kulit terutama wanita',
             style: TextStyle(
               color: Color(MyColors.purple01),
               fontWeight: FontWeight.w500,
@@ -137,18 +137,18 @@ class DoctorInfo extends StatelessWidget {
     return Row(
       children: const [
         NumberCard(
-          label: 'Pasien',
-          value: '300+',
+          label: 'Patients',
+          value: '200+',
         ),
         SizedBox(width: 15),
         NumberCard(
           label: 'Melayani',
-          value: '10 tahun',
+          value: '7 tahun',
         ),
         SizedBox(width: 15),
         NumberCard(
           label: 'Rating',
-          value: '5.0',
+          value: '4.8',
         ),
       ],
     );
@@ -241,7 +241,7 @@ class DetailDoctorCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Dr. Wahyu Hidayat',
+                      'Dr. Isti Widodo',
                       style: TextStyle(
                           color: Color(MyColors.header01),
                           fontWeight: FontWeight.w700),
@@ -250,7 +250,7 @@ class DetailDoctorCard extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      'Spesialis Penyakit Dalam',
+                      'Spesialis Kulit',
                       style: TextStyle(
                         color: Color(MyColors.grey02),
                         fontWeight: FontWeight.w500,
@@ -260,7 +260,7 @@ class DetailDoctorCard extends StatelessWidget {
                 ),
               ),
               Image(
-                image: AssetImage('assets/doctor02.png'),
+                image: AssetImage('assets/doctor05.jpeg'),
                 width: 100,
               )
             ],
