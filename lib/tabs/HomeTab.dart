@@ -75,7 +75,7 @@ class HomeTab extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {onPressedScheduleCard();},
                 )
               ],
             ),
