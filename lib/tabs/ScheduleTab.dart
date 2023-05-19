@@ -9,61 +9,61 @@ class ScheduleTab extends StatefulWidget {
   State<ScheduleTab> createState() => _ScheduleTabState();
 }
 
-enum FilterStatus { Upcoming, Complete, Cancel }
+enum FilterStatus { Berlangsung, Selesai, Dibatalkan }
 
 List<Map> schedules = [
   {
-    'img': 'assets/doctor01.jpeg',
-    'doctorName': 'Dr. Anastasya Syahid',
-    'doctorTitle': 'Dental Specialist',
-    'reservedDate': 'Monday, Aug 29',
-    'reservedTime': '11:00 - 12:00',
-    'status': FilterStatus.Upcoming
-  },
-  {
-    'img': 'assets/doctor02.png',
-    'doctorName': 'Dr. Mauldya Imran',
-    'doctorTitle': 'Skin Specialist',
-    'reservedDate': 'Monday, Sep 29',
-    'reservedTime': '11:00 - 12:00',
-    'status': FilterStatus.Upcoming
-  },
-  {
     'img': 'assets/doctor03.jpeg',
-    'doctorName': 'Dr. Rihanna Garland',
-    'doctorTitle': 'General Specialist',
-    'reservedDate': 'Monday, Jul 29',
-    'reservedTime': '11:00 - 12:00',
-    'status': FilterStatus.Upcoming
+    'doctorName': 'Dr. Yosef David',
+    'doctorTitle': 'Spesialis Gigi dan Mulut',
+    'reservedDate': 'Senin, 22 Mei',
+    'reservedTime': '11:00 - 12:10',
+    'status': FilterStatus.Berlangsung
   },
   {
     'img': 'assets/doctor04.jpeg',
-    'doctorName': 'Dr. John Doe',
-    'doctorTitle': 'Something Specialist',
-    'reservedDate': 'Monday, Jul 29',
+    'doctorName': 'Dr. Yolanda Tamara',
+    'doctorTitle': 'Spesialis Anak',
+    'reservedDate': 'Senin, Sep 29',
     'reservedTime': '11:00 - 12:00',
-    'status': FilterStatus.Complete
+    'status': FilterStatus.Berlangsung
   },
   {
-    'img': 'assets/doctor05.jpeg',
-    'doctorName': 'Dr. Sam Smithh',
-    'doctorTitle': 'Other Specialist',
-    'reservedDate': 'Monday, Jul 29',
+    'img': 'assets/doctor05.png',
+    'doctorName': 'Dr. Arya Purnama',
+    'doctorTitle': 'General Specialist',
+    'reservedDate': 'Senin, Jul 29',
     'reservedTime': '11:00 - 12:00',
-    'status': FilterStatus.Cancel
+    'status': FilterStatus.Berlangsung
   },
   {
-    'img': 'assets/doctor05.jpeg',
-    'doctorName': 'Dr. Sam Smithh',
-    'doctorTitle': 'Other Specialist',
-    'reservedDate': 'Monday, Jul 29',
+    'img': 'assets/doctor04.jpeg',
+    'doctorName': 'Dr. Yolanda Tamara',
+    'doctorTitle': 'Spesialis Anak',
+    'reservedDate': 'Selasa, Jul 29',
     'reservedTime': '11:00 - 12:00',
-    'status': FilterStatus.Cancel
+    'status': FilterStatus.Selesai
+  },
+  {
+    'img': 'assets/doctor01.jpeg',
+    'doctorName': 'Dr. Yusuf Raharja',
+    'doctorTitle': 'Spesialis Bedah',
+    'reservedDate': 'Rabu, Jul 29',
+    'reservedTime': '11:00 - 12:00',
+    'status': FilterStatus.Dibatalkan
+  },
+  {
+    'img': 'assets/doctor07.png',
+    'doctorName': 'Dr. Christopher Surya',
+    'doctorTitle': 'Dokter Umum',
+    'reservedDate': 'Monday, Jul 29',
+    'reservedTime': 'Jumat - 12:00',
+    'status': FilterStatus.Dibatalkan
   },
 ];
 
 class _ScheduleTabState extends State<ScheduleTab> {
-  FilterStatus status = FilterStatus.Upcoming;
+  FilterStatus status = FilterStatus.Berlangsung;
   Alignment _alignment = Alignment.centerLeft;
 
   @override
@@ -79,7 +79,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Schedule',
+              'Jadwal Periksa',
               textAlign: TextAlign.center,
               style: kTitleStyle,
             ),
@@ -103,16 +103,16 @@ class _ScheduleTabState extends State<ScheduleTab> {
                           child: GestureDetector(
                             onTap: () {
                               setState(() {
-                                if (filterStatus == FilterStatus.Upcoming) {
-                                  status = FilterStatus.Upcoming;
+                                if (filterStatus == FilterStatus.Berlangsung) {
+                                  status = FilterStatus.Berlangsung;
                                   _alignment = Alignment.centerLeft;
                                 } else if (filterStatus ==
-                                    FilterStatus.Complete) {
-                                  status = FilterStatus.Complete;
+                                    FilterStatus.Selesai) {
+                                  status = FilterStatus.Selesai;
                                   _alignment = Alignment.center;
                                 } else if (filterStatus ==
-                                    FilterStatus.Cancel) {
-                                  status = FilterStatus.Cancel;
+                                    FilterStatus.Dibatalkan) {
+                                  status = FilterStatus.Dibatalkan;
                                   _alignment = Alignment.centerRight;
                                 }
                               });
@@ -214,7 +214,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
                             children: [
                               Expanded(
                                 child: OutlinedButton(
-                                  child: Text('Cancel'),
+                                  child: Text('Batalkan'),
                                   onPressed: () {},
                                 ),
                               ),
@@ -223,7 +223,7 @@ class _ScheduleTabState extends State<ScheduleTab> {
                               ),
                               Expanded(
                                 child: ElevatedButton(
-                                  child: Text('Reschedule'),
+                                  child: Text('Ubah Jadwal'),
                                   onPressed: () => {},
                                 ),
                               )
@@ -272,7 +272,7 @@ class DateTimeCard extends StatelessWidget {
                 width: 5,
               ),
               Text(
-                'Mon, July 29',
+                'Senin, 22 Mei',
                 style: TextStyle(
                   fontSize: 12,
                   color: Color(MyColors.primary),
