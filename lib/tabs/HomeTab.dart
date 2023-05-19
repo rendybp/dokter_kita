@@ -464,7 +464,7 @@ class UserIntro extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text(
-              'Hello',
+              'Hallo',
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             Text(
